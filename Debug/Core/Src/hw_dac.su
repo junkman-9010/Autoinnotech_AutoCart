@@ -1,0 +1,3 @@
+../Core/Src/hw_dac.c:20:19:HW_DAC_Init	16	static
+../Core/Src/hw_dac.c:61:19:HW_DAC_SetValue	16	static
+../Core/Src/hw_dac.c:80:19:HW_DAC_Start	16	static

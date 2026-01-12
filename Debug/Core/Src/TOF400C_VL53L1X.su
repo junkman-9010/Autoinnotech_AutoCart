@@ -1,0 +1,3 @@
+../Core/Src/TOF400C_VL53L1X.c:20:19:TOF_Init	40	static
+../Core/Src/TOF400C_VL53L1X.c:61:19:TOF_StartRanging	32	static
+../Core/Src/TOF400C_VL53L1X.c:69:19:TOF_ReadDistance	32	static

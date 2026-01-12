@@ -1,0 +1,6 @@
+../Core/Src/modbus-rtu.c:11:10:modbus_rtu_CRC16	4
+../Core/Src/modbus-rtu.c:24:26:modbus_rtu_Get_Data	4
+../Core/Src/modbus-rtu.c:34:26:modbus_rtu_Set_Data	4
+../Core/Src/modbus-rtu.c:45:19:modbus_rtu_Master_Send	1
+../Core/Src/modbus-rtu.c:59:9:modbus_rtu_Slave_Parse	3
+../Core/Src/modbus-rtu.c:71:6:modbus_rtu_Slave_Process	14

@@ -1,0 +1,3 @@
+../Core/Src/MCT8316Z_Control.c:6:6:MCT8316_PWM_Init	1
+../Core/Src/MCT8316Z_Control.c:19:6:MCT8316_PWM_SetSpeed	5
+../Core/Src/MCT8316Z_Control.c:31:6:MCT8316_PWM_Stop	1

@@ -1,0 +1,7 @@
+../Core/Src/hw_uart.c:22:6:HW_USART1_UART_Init	8	static
+../Core/Src/hw_uart.c:38:6:HW_USART2_UART_Init	8	static
+../Core/Src/hw_uart.c:54:6:HW_USART3_UART_Init	8	static
+../Core/Src/hw_uart.c:70:6:HW_UART4_Init	8	static
+../Core/Src/hw_uart.c:86:6:HW_UART5_Init	8	static
+../Core/Src/hw_uart.c:102:19:HW_UART_Transmit	24	static
+../Core/Src/hw_uart.c:110:19:HW_UART_Receive_IT	24	static

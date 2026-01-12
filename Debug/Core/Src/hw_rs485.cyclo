@@ -1,0 +1,4 @@
+../Core/Src/hw_rs485.c:13:6:HW_RS485_Init_Config	1
+../Core/Src/hw_rs485.c:26:6:HW_RS485_Set_TxMode	1
+../Core/Src/hw_rs485.c:34:6:HW_RS485_Set_RxMode	1
+../Core/Src/hw_rs485.c:42:19:HW_RS485_Transmit	4

@@ -1,0 +1,4 @@
+../Core/Src/hw_system.c:16:6:SystemClock_Config	4
+../Core/Src/hw_system.c:69:6:System_ErrorHandler	1
+../Core/Src/hw_system.c:81:6:System_Delay	1
+../Core/Src/hw_system.c:89:10:System_GetTick	1

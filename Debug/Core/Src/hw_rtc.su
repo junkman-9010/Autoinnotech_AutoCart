@@ -1,0 +1,3 @@
+../Core/Src/hw_rtc.c:19:19:HW_RTC_Init	8	static
+../Core/Src/hw_rtc.c:43:19:HW_RTC_SetDateTime	16	static
+../Core/Src/hw_rtc.c:63:19:HW_RTC_GetDateTime	16	static

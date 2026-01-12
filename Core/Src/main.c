@@ -140,28 +140,25 @@ int main(void) {
 	HW_CAN_Init();
 	HW_TIM4_Init();
 	HW_USB_PCD_Init();
+
 	/* USER CODE BEGIN 2 */
 	// 범용 초기화 함수 사용: huart3와 main.h에 정의된 DE3 핀을 연결
 	HW_RS485_Init_Config(&rs485_ch3, &huart3, DE3_GPIO_Port, DE3_Pin);
 
+
+	HAL_GPIO_WritePin(DE3_GPIO_Port, DE3_Pin, GPIO_PIN_SET);
+
 	HAL_GPIO_WritePin(M1_DIR_GPIO_Port, M1_DIR_Pin, GPIO_PIN_RESET);
 	HAL_GPIO_WritePin(M2_DIR_GPIO_Port, M2_DIR_Pin, GPIO_PIN_RESET);
 
-	HAL_GPIO_WritePin(M1_SLEEP_GPIO_Port, M1_SLEEP_Pin, GPIO_PIN_RESET);
-	HAL_GPIO_WritePin(M2_SLEEP_GPIO_Port, M2_SLEEP_Pin, GPIO_PIN_RESET);
+//	HAL_GPIO_WritePin(M1_SLEEP_GPIO_Port, M1_SLEEP_Pin, GPIO_PIN_RESET);
+//	HAL_GPIO_WritePin(M2_SLEEP_GPIO_Port, M2_SLEEP_Pin, GPIO_PIN_RESET);
+
+	HAL_GPIO_WritePin(M1_SLEEP_GPIO_Port, M1_SLEEP_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(M2_SLEEP_GPIO_Port, M2_SLEEP_Pin, GPIO_PIN_SET);
 
 	HAL_GPIO_WritePin(M1_DRVOFF_GPIO_Port, M1_DRVOFF_Pin, GPIO_PIN_RESET);
 	HAL_GPIO_WritePin(M2_DRVOFF_GPIO_Port, M2_DRVOFF_Pin, GPIO_PIN_RESET);
-
-	HAL_GPIO_WritePin(M1_DIR_GPIO_Port, M1_DIR_Pin, GPIO_PIN_RESET);
-	HAL_GPIO_WritePin(M2_DIR_GPIO_Port, M2_DIR_Pin, GPIO_PIN_RESET);
-
-	HAL_Delay(500);
-
-	HAL_GPIO_WritePin(M1_SLEEP_GPIO_Port, M1_SLEEP_Pin, GPIO_PIN_RESET);
-	HAL_GPIO_WritePin(M2_SLEEP_GPIO_Port, M2_SLEEP_Pin, GPIO_PIN_SET);
-
-	HAL_Delay(100);
 
 	// [STEP 2] PWM 시작
 	HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_2); // PD13
@@ -169,6 +166,10 @@ int main(void) {
 
 	// TIM8은 고급 타이머이므로 출력을 물리적으로 허용해줘야 합니다.
 	__HAL_TIM_MOE_ENABLE(&htim8);
+
+
+	HAL_GPIO_WritePin(TOF_SHUT1_GPIO_Port, TOF_SHUT1_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(TOF_SHUT2_GPIO_Port, TOF_SHUT2_Pin, GPIO_PIN_RESET);
 
 	// TIM2 인터럽트 시작 (이 코드가 있어야 콜백이 실행됩니다)
 	HAL_TIM_Base_Start_IT(&htim2);
@@ -219,21 +220,39 @@ int main(void) {
 //		}
 		// 100ms 플래그가 세워졌는지 확인
 		if (timer_100ms_flag == 1) {
-			timer_100ms_flag = 0; // 플래그 초기화 (중요)
+			timer_100ms_flag = 0; // 플래그 초기화
 
-			// 1. TOF 센서로부터 거리 데이터 읽기
-//			TOF_ReadDistance(&tof_left);
-//			TOF_ReadDistance(&tof_right);
+			// --- [1] I2C2 장치 스캔 및 RS485 전송 ---
+			char scan_result[32];
+			HAL_StatusTypeDef res;
+			uint8_t found_any = 0;
 
-			// 5% Duty 적용 (3600 * 0.05 = 180)
-//			uint32_t duty_5_percent = 180;720
-			uint32_t duty_5_percent = 720;
+			// RS485로 스캔 시작 알림 (선택 사항)
+			// HW_RS485_Transmit(&rs485_ch3, (uint8_t*)"Scan:", 5, 10);
 
+			for (uint16_t i = 1; i < 128; i++) {
+				// i << 1 은 7비트 주소를 HAL 규격(8비트)으로 변환
+				res = HAL_I2C_IsDeviceReady(&hi2c2, (uint16_t) (i << 1), 2, 2);
+				if (res == HAL_OK) {
+					sprintf(scan_result, "I2C2: 0x%02X\r\n", i);
+					HW_RS485_Transmit(&rs485_ch3, (uint8_t*) scan_result,
+							strlen(scan_result), 500);
+					found_any = 1;
+				}
+			}
 
-			HW_TIM_SetPWM_Duty(&htim4, TIM_CHANNEL_2, duty_5_percent);
-			HW_TIM_SetPWM_Duty(&htim8, TIM_CHANNEL_2, duty_5_percent);
+			if (!found_any) {
+				char *none_msg = "I2C2: None\r\n";
+				HW_RS485_Transmit(&rs485_ch3, (uint8_t*) none_msg,
+						strlen(none_msg), 100);
+			}
 
-			// LED1 토글 동작 수행
+			// --- [2] 기존 PWM 및 LED 동작 유지 ---
+			uint32_t duty_20_percent = 720; // 3600 * 0.20
+			HW_TIM_SetPWM_Duty(&htim4, TIM_CHANNEL_2, duty_20_percent);
+			HW_TIM_SetPWM_Duty(&htim8, TIM_CHANNEL_2, duty_20_percent);
+
+			// 동작 확인용 LED1 토글
 			HAL_GPIO_TogglePin(GPIOB, LED1_Pin);
 		}
 

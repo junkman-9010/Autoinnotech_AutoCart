@@ -1,2 +1,2 @@
-../Core/Src/hw_gpio.c:15:6:HW_GPIO_Init	48	static
-../Core/Src/hw_gpio.c:94:6:MX_GPIO_SetLED	24	static
+../Core/Src/hw_gpio.c:28:6:HW_GPIO_Init	48	static
+../Core/Src/hw_gpio.c:116:6:MX_GPIO_SetLED	24	static

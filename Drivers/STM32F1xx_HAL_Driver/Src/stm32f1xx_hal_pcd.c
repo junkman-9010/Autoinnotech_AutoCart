@@ -22,9 +22,9 @@
   *
   ******************************************************************************
   @verbatim
-  =
+  ==============================================================================
                     ##### How to use this driver #####
-  =
+  ==============================================================================
     [..]
       The PCD HAL driver can be used as follows:
 
@@ -113,9 +113,9 @@ static uint16_t HAL_PCD_EP_DB_Receive(PCD_HandleTypeDef *hpcd, PCD_EPTypeDef *ep
   *  @brief    Initialization and Configuration functions
   *
 @verbatim
- ==
+ ===============================================================================
             ##### Initialization and de-initialization functions #####
- ==
+ ===============================================================================
     [..]  This section provides functions allowing to:
 
 @endverbatim
@@ -836,9 +836,9 @@ HAL_StatusTypeDef HAL_PCD_UnRegisterIsoInIncpltCallback(PCD_HandleTypeDef *hpcd)
   *  @brief   Data transfers functions
   *
 @verbatim
- ==
+ ===============================================================================
                       ##### IO operation functions #####
- ==
+ ===============================================================================
     [..]
     This subsection provides a set of functions allowing to manage the PCD data
     transfers.
@@ -1640,9 +1640,9 @@ __weak void HAL_PCD_DisconnectCallback(PCD_HandleTypeDef *hpcd)
   *  @brief   management functions
   *
 @verbatim
- ==
+ ===============================================================================
                       ##### Peripheral Control functions #####
- ==
+ ===============================================================================
     [..]
     This subsection provides a set of functions allowing to control the PCD data
     transfers.
@@ -2006,9 +2006,9 @@ HAL_StatusTypeDef HAL_PCD_DeActivateRemoteWakeup(PCD_HandleTypeDef *hpcd)
   *  @brief   Peripheral State functions
   *
 @verbatim
- ==
+ ===============================================================================
                       ##### Peripheral State functions #####
- ==
+ ===============================================================================
     [..]
     This subsection permits to get in run-time the status of the peripheral
     and the data flow.

@@ -24,9 +24,9 @@
   *
   ******************************************************************************
   @verbatim
-  =
+  ==============================================================================
                         ##### How to use this driver #####
-  =
+  ==============================================================================
     [..]
       (#) Initialize the CAN low level resources by implementing the
           HAL_CAN_MspInit():
@@ -75,7 +75,7 @@
 
 
       *** Polling mode operation ***
-      ==
+      ==============================
     [..]
       (#) Reception:
             (++) Monitor reception of message using HAL_CAN_GetRxFifoFillLevel()
@@ -90,7 +90,7 @@
 
 
       *** Interrupt mode operation ***
-      ====
+      ================================
     [..]
       (#) Notifications are activated using HAL_CAN_ActivateNotification()
           function. Then, the process can be controlled through the
@@ -114,7 +114,7 @@
 
 
       *** Sleep mode ***
-      ====
+      ==================
     [..]
       (#) The CAN peripheral can be put in sleep mode (low power), using
           HAL_CAN_RequestSleep(). The sleep mode will be entered as soon as the
@@ -138,7 +138,7 @@
                  if automatic wake up mode is enabled.
 
   *** Callback registration ***
-  ===
+  =============================================
 
   The compilation define  USE_HAL_CAN_REGISTER_CALLBACKS when set to 1
   allows the user to configure dynamically the driver callbacks.
@@ -252,9 +252,9 @@
   * @brief    Initialization and Configuration functions
   *
 @verbatim
-  =
+  ==============================================================================
               ##### Initialization and de-initialization functions #####
-  =
+  ==============================================================================
     [..]  This section provides functions allowing to:
       (+) HAL_CAN_Init                       : Initialize and configure the CAN.
       (+) HAL_CAN_DeInit                     : De-initialize the CAN.
@@ -818,9 +818,9 @@ HAL_StatusTypeDef HAL_CAN_UnRegisterCallback(CAN_HandleTypeDef *hcan, HAL_CAN_Ca
   * @brief    Configuration functions.
   *
 @verbatim
-  =
+  ==============================================================================
               ##### Configuration functions #####
-  =
+  ==============================================================================
     [..]  This section provides functions allowing to:
       (+) HAL_CAN_ConfigFilter            : Configure the CAN reception filters
 
@@ -974,9 +974,9 @@ HAL_StatusTypeDef HAL_CAN_ConfigFilter(CAN_HandleTypeDef *hcan, const CAN_Filter
   * @brief    Control functions
   *
 @verbatim
-  =
+  ==============================================================================
                       ##### Control functions #####
-  =
+  ==============================================================================
     [..]  This section provides functions allowing to:
       (+) HAL_CAN_Start                    : Start the CAN module
       (+) HAL_CAN_Stop                     : Stop the CAN module
@@ -1610,9 +1610,9 @@ uint32_t HAL_CAN_GetRxFifoFillLevel(const CAN_HandleTypeDef *hcan, uint32_t RxFi
   * @brief    Interrupts management
   *
 @verbatim
-  =
+  ==============================================================================
                        ##### Interrupts management #####
-  =
+  ==============================================================================
     [..]  This section provides functions allowing to:
       (+) HAL_CAN_ActivateNotification      : Enable interrupts
       (+) HAL_CAN_DeactivateNotification    : Disable interrupts
@@ -2076,9 +2076,9 @@ void HAL_CAN_IRQHandler(CAN_HandleTypeDef *hcan)
   * @brief   CAN Callback functions
   *
 @verbatim
-  =
+  ==============================================================================
                           ##### Callback functions #####
-  =
+  ==============================================================================
     [..]
     This subsection provides the following callback functions:
       (+) HAL_CAN_TxMailbox0CompleteCallback
@@ -2326,9 +2326,9 @@ __weak void HAL_CAN_ErrorCallback(CAN_HandleTypeDef *hcan)
   * @brief   CAN Peripheral State functions
   *
 @verbatim
-  =
+  ==============================================================================
             ##### Peripheral State and Error functions #####
-  =
+  ==============================================================================
     [..]
     This subsection provides functions allowing to :
       (+) HAL_CAN_GetState()  : Return the CAN state.

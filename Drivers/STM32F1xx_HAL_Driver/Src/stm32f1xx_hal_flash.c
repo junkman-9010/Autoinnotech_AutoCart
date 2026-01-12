@@ -10,9 +10,9 @@
   *           + Peripheral State functions
   *         
   @verbatim
-  =
+  ==============================================================================
                         ##### FLASH peripheral features #####
-  =
+  ==============================================================================
   [..] The Flash memory interface manages CPU AHB I-Code and D-Code accesses 
        to the Flash memory. It implements the erase and program Flash memory operations 
        and the read and write protection mechanisms.
@@ -29,7 +29,7 @@
 
 
                      ##### How to use this driver #####
-  =
+  ==============================================================================
   [..]                             
       This driver provides functions and macros to configure and program the FLASH 
       memory of all STM32F1xx devices.
@@ -632,9 +632,9 @@ __weak void HAL_FLASH_OperationErrorCallback(uint32_t ReturnValue)
  *  @brief   management functions 
  *
 @verbatim   
- ==
+ ===============================================================================
                       ##### Peripheral Control functions #####
- ==  
+ ===============================================================================  
     [..]
     This subsection provides a set of functions allowing to control the FLASH 
     memory operations.
@@ -749,9 +749,9 @@ void HAL_FLASH_OB_Launch(void)
  *  @brief    Peripheral errors functions 
  *
 @verbatim   
- ==
+ ===============================================================================
                       ##### Peripheral Errors functions #####
- ==  
+ ===============================================================================  
     [..]
     This subsection permit to get in run-time errors of  the FLASH peripheral.
 

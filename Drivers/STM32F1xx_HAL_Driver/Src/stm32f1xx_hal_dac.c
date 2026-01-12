@@ -23,12 +23,12 @@
   *
   ******************************************************************************
   @verbatim
-  =
+  ==============================================================================
                       ##### DAC Peripheral features #####
-  =
+  ==============================================================================
     [..]
       *** DAC Channels ***
-      ======
+      ====================
     [..]
     STM32F1 devices integrate two 12-bit Digital Analog Converters
 
@@ -40,7 +40,7 @@
           peripherals (ex. timers).
 
       *** DAC Triggers ***
-      ======
+      ====================
     [..]
     Digital to Analog conversion can be non-triggered using DAC_TRIGGER_NONE
     and DAC_OUT1/DAC_OUT2 is available once writing to DHRx register.
@@ -59,7 +59,7 @@
       (#) Software using DAC_TRIGGER_SOFTWARE
 
       *** DAC Buffer mode feature ***
-      ===
+      ===============================
       [..]
       Each DAC channel integrates an output buffer that can be used to
       reduce the output impedance, and to drive external loads directly
@@ -71,7 +71,7 @@
           impedance value with and without output buffer.
 
       *** GPIO configurations guidelines ***
-      
+      =====================
       [..]
       When a DAC channel is used (ex channel1 on PA4) and the other is not
       (ex channel2 on PA5 is configured in Analog and disabled).
@@ -82,14 +82,14 @@
       PA5 is configured in ANALOG just before it is turned on.
 
        *** DAC wave generation feature ***
-       
+       ===================================
        [..]
        Both DAC channels can be used to generate
          (#) Noise wave
          (#) Triangle wave
 
        *** DAC data format ***
-       ==
+       =======================
        [..]
        The DAC data format can be:
          (#) 8-bit right alignment using DAC_ALIGN_8B_R
@@ -97,7 +97,7 @@
          (#) 12-bit right alignment using DAC_ALIGN_12B_R
 
        *** DAC data value to voltage correspondence ***
-       ======
+       ================================================
        [..]
        The analog output voltage on each DAC channel pin is determined
        by the following equation:
@@ -111,7 +111,7 @@
        (+) Assuming that VREF+ = 3.3V, DAC_OUT1 = (3.3 * 868) / 4095 = 0.7V
 
        *** DMA requests ***
-       
+       =====================
        [..]
        A DMA request can be generated when an external trigger (but not a software trigger)
        occurs if DMA1 requests are enabled using HAL_DAC_Start_DMA().
@@ -128,7 +128,7 @@
         refer to Extended Features Driver description
 
                       ##### How to use this driver #####
-  =
+  ==============================================================================
     [..]
       (+) DAC APB clock must be enabled to get write access to DAC
           registers using HAL_DAC_Init()
@@ -138,14 +138,14 @@
 
 
      *** Polling mode IO operation ***
-     =====
+     =================================
      [..]
        (+) Start the DAC peripheral using HAL_DAC_Start()
        (+) To read the DAC last data output value, use the HAL_DAC_GetValue() function.
        (+) Stop the DAC peripheral using HAL_DAC_Stop()
 
      *** DMA mode IO operation ***
-     ==
+     ==============================
      [..]
        (+) Start the DAC peripheral using HAL_DAC_Start_DMA(), at this stage the user specify the length
            of data to be transferred at each end of conversion
@@ -167,7 +167,7 @@
        (+) Stop the DAC peripheral using HAL_DAC_Stop_DMA()
 
     *** Callback registration ***
-    ===
+    =============================================
     [..]
       The compilation define  USE_HAL_DAC_REGISTER_CALLBACKS when set to 1
       allows the user to configure dynamically the driver callbacks.
@@ -223,7 +223,7 @@
       and weak (overridden) callbacks are used.
 
      *** DAC HAL driver macros list ***
-     ===
+     =============================================
      [..]
        Below the list of most used macros in DAC HAL driver.
 
@@ -270,9 +270,9 @@
   *  @brief    Initialization and Configuration functions
   *
 @verbatim
-  =
+  ==============================================================================
               ##### Initialization and de-initialization functions #####
-  =
+  ==============================================================================
     [..]  This section provides functions allowing to:
       (+) Initialize and configure the DAC.
       (+) De-initialize the DAC.
@@ -428,9 +428,9 @@ __weak void HAL_DAC_MspDeInit(DAC_HandleTypeDef *hdac)
   *  @brief    IO operation functions
   *
 @verbatim
-  =
+  ==============================================================================
              ##### IO operation functions #####
-  =
+  ==============================================================================
     [..]  This section provides functions allowing to:
       (+) Start conversion.
       (+) Stop conversion.
@@ -933,9 +933,9 @@ __weak void HAL_DAC_DMAUnderrunCallbackCh1(DAC_HandleTypeDef *hdac)
   *  @brief    Peripheral Control functions
   *
 @verbatim
-  =
+  ==============================================================================
              ##### Peripheral Control functions #####
-  =
+  ==============================================================================
     [..]  This section provides functions allowing to:
       (+) Configure channels.
       (+) Set the specified data holding register value for DAC channel.
@@ -1047,9 +1047,9 @@ HAL_StatusTypeDef HAL_DAC_ConfigChannel(DAC_HandleTypeDef *hdac,
   *  @brief   Peripheral State and Errors functions
   *
 @verbatim
-  =
+  ==============================================================================
             ##### Peripheral State and Errors functions #####
-  =
+  ==============================================================================
     [..]
     This subsection provides functions allowing to
       (+) Check the DAC state.

@@ -11,12 +11,12 @@
   *           + Extended Peripheral Control functions 
   *         
   @verbatim
-  =
+  ==============================================================================
                ##### Flash peripheral extended features  #####
-  =
+  ==============================================================================
            
                       ##### How to use this driver #####
-  =
+  ==============================================================================
   [..] This driver provides functions to configure and program the FLASH memory 
        of all STM32F1xxx devices. It includes
        
@@ -118,9 +118,9 @@ static uint8_t           FLASH_OB_GetUser(void);
  *  @brief   FLASH Memory Erasing functions
   *
 @verbatim   
-  =
+  ==============================================================================
                 ##### FLASH Erasing Programming functions ##### 
-  =
+  ==============================================================================
 
     [..] The FLASH Memory Erasing functions, includes the following functions:
     (+) HAL_FLASHEx_Erase: return only when erase has been done
@@ -368,9 +368,9 @@ HAL_StatusTypeDef HAL_FLASHEx_Erase_IT(FLASH_EraseInitTypeDef *pEraseInit)
  *  @brief   Option Bytes Programming functions
   *
 @verbatim   
-  =
+  ==============================================================================
                 ##### Option Bytes Programming functions ##### 
-  =  
+  ==============================================================================  
     [..]
     This subsection provides a set of functions allowing to control the FLASH 
     option bytes operations.

@@ -52,6 +52,9 @@ default.size.stdout \
 OBJDUMP_LIST += \
 Autoinnotech_AutoCart_STM32F103VCT6_ver.2026-01-11.list \
 
+OBJCOPY_HEX += \
+Autoinnotech_AutoCart_STM32F103VCT6_ver.2026-01-11.hex \
+
 
 # All Target
 all: main-build
@@ -75,12 +78,17 @@ Autoinnotech_AutoCart_STM32F103VCT6_ver.2026-01-11.list: $(EXECUTABLES) makefile
 	@echo 'Finished building: $@'
 	@echo ' '
 
+Autoinnotech_AutoCart_STM32F103VCT6_ver.2026-01-11.hex: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "Autoinnotech_AutoCart_STM32F103VCT6_ver.2026-01-11.hex"
+	@echo 'Finished building: $@'
+	@echo ' '
+
 # Other Targets
 clean:
-	-$(RM) Autoinnotech_AutoCart_STM32F103VCT6_ver.2026-01-11.elf Autoinnotech_AutoCart_STM32F103VCT6_ver.2026-01-11.list Autoinnotech_AutoCart_STM32F103VCT6_ver.2026-01-11.map default.size.stdout
+	-$(RM) Autoinnotech_AutoCart_STM32F103VCT6_ver.2026-01-11.elf Autoinnotech_AutoCart_STM32F103VCT6_ver.2026-01-11.hex Autoinnotech_AutoCart_STM32F103VCT6_ver.2026-01-11.list Autoinnotech_AutoCart_STM32F103VCT6_ver.2026-01-11.map default.size.stdout
 	-@echo ' '
 
-secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)
+secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_HEX)
 
 fail-specified-linker-script-missing:
 	@echo 'Error: Cannot find the specified linker script. Check the linker settings in the build configuration.'

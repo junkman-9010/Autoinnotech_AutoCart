@@ -9,9 +9,9 @@
   *           + IO operation functions
   *           + Peripheral State and errors functions
   @verbatim
-  =
+  ==============================================================================
                         ##### How to use this driver #####
-  =
+  ==============================================================================
   [..]
    (#) Enable and configure the peripheral to be connected to the DMA Channel
        (except for internal SRAM / FLASH memories: no initialization is 
@@ -30,7 +30,7 @@
                    
      -@-   In Memory-to-Memory transfer mode, Circular mode is not allowed.
      *** Polling mode IO operation ***
-     =====
+     =================================
     [..]
           (+) Use HAL_DMA_Start() to start DMA transfer after the configuration of Source
               address and destination address and the Length of data to be transferred
@@ -38,7 +38,7 @@
               case a fixed Timeout can be configured by User depending from his application.
 
      *** Interrupt mode IO operation ***
-     
+     ===================================
     [..]
           (+) Configure the DMA interrupt priority using HAL_NVIC_SetPriority()
           (+) Enable the DMA IRQ handler using HAL_NVIC_EnableIRQ()
@@ -51,7 +51,7 @@
               XferErrorCallback (i.e. a member of DMA handle structure).
 
      *** DMA HAL driver macros list ***
-     === 
+     ============================================= 
       [..]
        Below the list of most used macros in DMA HAL driver.
 
@@ -117,9 +117,9 @@ static void DMA_SetConfig(DMA_HandleTypeDef *hdma, uint32_t SrcAddress, uint32_t
   *  @brief   Initialization and de-initialization functions 
   *
 @verbatim
- ==
+ ===============================================================================
              ##### Initialization and de-initialization functions  #####
- ==
+ ===============================================================================
     [..]
     This section provides functions allowing to initialize the DMA Channel source
     and destination addresses, incrementation and data sizes, transfer direction, 
@@ -291,9 +291,9 @@ HAL_StatusTypeDef HAL_DMA_DeInit(DMA_HandleTypeDef *hdma)
   *  @brief   Input and Output operation functions
   *
 @verbatim
- ==
+ ===============================================================================
                       #####  IO operation functions  #####
- ==
+ ===============================================================================
     [..]  This section provides functions allowing to:
       (+) Configure the source, destination address and data length and Start DMA transfer
       (+) Configure the source, destination address and data length and
@@ -798,9 +798,9 @@ HAL_StatusTypeDef HAL_DMA_UnRegisterCallback(DMA_HandleTypeDef *hdma, HAL_DMA_Ca
   *  @brief    Peripheral State and Errors functions
   *
 @verbatim
- ==
+ ===============================================================================
             ##### Peripheral State and Errors functions #####
- ==  
+ ===============================================================================  
     [..]
     This subsection provides functions allowing to
       (+) Check the DMA state

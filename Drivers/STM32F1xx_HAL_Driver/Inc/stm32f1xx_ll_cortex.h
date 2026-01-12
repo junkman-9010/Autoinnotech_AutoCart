@@ -4,9 +4,9 @@
   * @author  MCD Application Team
   * @brief   Header file of CORTEX LL module.
   @verbatim
-  =
+  ==============================================================================
                      ##### How to use this driver #####
-  =
+  ==============================================================================
     [..]
     The LL CORTEX driver contains a set of generic APIs that can be
     used by user:

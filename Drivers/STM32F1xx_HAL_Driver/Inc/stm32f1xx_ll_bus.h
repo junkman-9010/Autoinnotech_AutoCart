@@ -6,7 +6,7 @@
 
   @verbatim
                       ##### RCC Limitations #####
-  =
+  ==============================================================================
     [..]
       A delay between an RCC peripheral clock enable and the effective peripheral
       enabling should be taken into account in order to manage the peripheral read/write

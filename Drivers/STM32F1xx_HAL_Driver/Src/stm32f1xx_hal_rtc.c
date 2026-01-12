@@ -23,30 +23,30 @@
   *
   ******************************************************************************
   @verbatim
-  =
+  ==============================================================================
                   ##### How to use this driver #####
-  =
+  ==============================================================================
   [..]
     (+) Enable the RTC domain access (see description in the section above).
     (+) Configure the RTC Prescaler (Asynchronous prescaler to generate RTC 1Hz time base)
         using the HAL_RTC_Init() function.
 
   *** Time and Date configuration ***
-  
+  ===================================
   [..]
     (+) To configure the RTC Calendar (Time and Date) use the HAL_RTC_SetTime()
         and HAL_RTC_SetDate() functions.
     (+) To read the RTC Calendar, use the HAL_RTC_GetTime() and HAL_RTC_GetDate() functions.
 
   *** Alarm configuration ***
-  ======
+  ===========================
   [..]
     (+) To configure the RTC Alarm use the HAL_RTC_SetAlarm() function.
         You can also configure the RTC Alarm with interrupt mode using the HAL_RTC_SetAlarm_IT() function.
     (+) To read the RTC Alarm, use the HAL_RTC_GetAlarm() function.
 
   *** Tamper configuration ***
-  
+  ============================
   [..]
     (+) Enable the RTC Tamper and configure the Tamper Level using the
         HAL_RTCEx_SetTamper() function. You can configure RTC Tamper with interrupt
@@ -54,7 +54,7 @@
     (+) The TAMPER1 alternate function can be mapped to PC13
 
   *** Backup Data Registers configuration ***
-  =
+  ===========================================
   [..]
     (+) To write to the RTC Backup Data registers, use the HAL_RTCEx_BKUPWrite()
         function.
@@ -62,7 +62,7 @@
         function.
 
                   ##### WARNING: Drivers Restrictions  #####
-  ===
+  ==================================================================
   [..] RTC version used on STM32F1 families is version V1. All the features supported by V2
        (other families) will be not supported on F1.
   [..] As on V2, main RTC features are managed by HW. But on F1, date feature is completely
@@ -77,7 +77,7 @@
         to program a new alarm)
 
               ##### Backup Domain Operating Condition #####
-  =
+  ==============================================================================
   [..] The real-time clock (RTC) and the RTC backup registers can be powered
        from the VBAT voltage when the main VDD supply is powered off.
        To retain the content of the RTC backup registers and supply the RTC
@@ -100,7 +100,7 @@
     (+) PC13 can be used as the Tamper pin
 
                    ##### Backup Domain Reset #####
-  ===
+  ==================================================================
   [..] The backup domain reset sets all RTC registers and the RCC_BDCR register
        to their reset values.
   [..] A backup domain reset is generated when one of the following events occurs:
@@ -110,7 +110,7 @@
     (#) Tamper detection event resets all data backup registers.
 
                    ##### Backup Domain Access #####
-  ===
+  ==================================================================
   [..] After reset, the backup domain (RTC registers, RTC backup data
        registers and backup SRAM) is protected against possible unwanted write
        accesses.
@@ -120,7 +120,7 @@
     (+) Enable the BKP clock in using __HAL_RCC_BKP_CLK_ENABLE()
 
                   ##### RTC and low power modes #####
-  ===
+  ==================================================================
   [..] The MCU can be woken up from a low power mode by an RTC alternate
        function.
   [..] The RTC alternate functions are the RTC alarms (Alarm A),
@@ -131,7 +131,7 @@
        on an external interrupt (Auto-wakeup mode), by using the RTC alarm.
 
   *** Callback registration ***
-  ===
+  =============================================
   [..]
   The compilation define  USE_HAL_RTC_REGISTER_CALLBACKS when set to 1
   allows the user to configure dynamically the driver callbacks.
@@ -247,9 +247,9 @@ static uint8_t            RTC_WeekDayNum(uint32_t nYear, uint8_t nMonth, uint8_t
  *  @brief    Initialization and Configuration functions
  *
 @verbatim
- ==
+ ===============================================================================
               ##### Initialization and de-initialization functions #####
- ==
+ ===============================================================================
    [..] This section provides functions allowing to initialize and configure the
          RTC Prescaler (Asynchronous), disable RTC registers Write protection,
          enter and exit the RTC initialization mode,
@@ -680,9 +680,9 @@ __weak void HAL_RTC_MspDeInit(RTC_HandleTypeDef *hrtc)
  *  @brief   RTC Time and Date functions
  *
 @verbatim
- ==
+ ===============================================================================
                  ##### RTC Time and Date functions #####
- ==
+ ===============================================================================
 
  [..] This section provides functions allowing to configure Time and Date features
 
@@ -1069,9 +1069,9 @@ HAL_StatusTypeDef HAL_RTC_GetDate(RTC_HandleTypeDef *hrtc, RTC_DateTypeDef *sDat
  *  @brief   RTC Alarm functions
  *
 @verbatim
- ==
+ ===============================================================================
                  ##### RTC Alarm functions #####
- ==
+ ===============================================================================
 
  [..] This section provides functions allowing to configure Alarm feature
 
@@ -1489,9 +1489,9 @@ HAL_StatusTypeDef HAL_RTC_PollForAlarmAEvent(RTC_HandleTypeDef *hrtc, uint32_t T
  *  @brief   Peripheral State functions
  *
 @verbatim
- ==
+ ===============================================================================
                      ##### Peripheral State functions #####
- ==
+ ===============================================================================
     [..]
     This subsection provides functions allowing to
       (+) Get RTC state
@@ -1518,9 +1518,9 @@ HAL_RTCStateTypeDef HAL_RTC_GetState(RTC_HandleTypeDef *hrtc)
  *  @brief   Peripheral Control functions
  *
 @verbatim
- ==
+ ===============================================================================
                      ##### Peripheral Control functions #####
- ==
+ ===============================================================================
     [..]
     This subsection provides functions allowing to
       (+) Wait for RTC Time and Date Synchronization

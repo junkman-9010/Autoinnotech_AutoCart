@@ -49,7 +49,7 @@ void HW_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(SPI2_INT_GPIO_Port, &GPIO_InitStruct);
 
-  GPIO_InitStruct.Pin = M2_FALUT__Pin|M1_FAULT__Pin;
+  GPIO_InitStruct.Pin = M2_FAULT_Pin|M1_FAULT_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);

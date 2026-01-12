@@ -9,9 +9,9 @@
   *           + Peripheral Control functions
   *
   @verbatim
-  =
+  ==============================================================================
                       ##### RCC specific features #####
-  =
+  ==============================================================================
     [..]
       After reset the device is running from Internal High Speed oscillator
       (HSI 8MHz) with Flash 0 wait state, Flash prefetch buffer is enabled,
@@ -31,7 +31,7 @@
           derived from the System clock (I2S, RTC, ADC, USB OTG FS)
 
                       ##### RCC Limitations #####
-  =
+  ==============================================================================
     [..]
       A delay between an RCC peripheral clock enable and the effective peripheral
       enabling should be taken into account in order to manage the peripheral read/write
@@ -113,9 +113,9 @@ static void RCC_Delay(uint32_t mdelay);
   *  @brief    Initialization and Configuration functions
   *
   @verbatim
-  ==
+  ===============================================================================
            ##### Initialization and de-initialization functions #####
-  ==
+  ===============================================================================
     [..]
       This section provides functions allowing to configure the internal/external oscillators
       (HSE, HSI, LSE, LSI, PLL, CSS and MCO) and the System buses clocks (SYSCLK, AHB, APB1
@@ -955,9 +955,9 @@ if (((RCC_ClkInitStruct->ClockType) & RCC_CLOCKTYPE_PCLK1) == RCC_CLOCKTYPE_PCLK
   *  @brief   RCC clocks control functions
   *
   @verbatim
-  ==
+  ===============================================================================
                   ##### Peripheral Control functions #####
-  ==
+  ===============================================================================
     [..]
     This subsection provides a set of functions allowing to control the RCC Clocks
     frequencies.

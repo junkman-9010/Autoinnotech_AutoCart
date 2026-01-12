@@ -22,9 +22,9 @@
   *
   ******************************************************************************
   @verbatim
-  =
+  ==============================================================================
                         ##### How to use this driver #####
-  =
+  ==============================================================================
   [..]
     The UART HAL driver can be used as follows:
 
@@ -77,7 +77,7 @@
             HAL_UART_MspInit() API.
 
     ##### Callback registration #####
-    ======
+    ==================================
 
     [..]
     The compilation define USE_HAL_UART_REGISTER_CALLBACKS when set to 1
@@ -148,13 +148,13 @@
         Three operation modes are available within this driver :
 
      *** Polling mode IO operation ***
-     =====
+     =================================
      [..]
        (+) Send an amount of data in blocking mode using HAL_UART_Transmit()
        (+) Receive an amount of data in blocking mode using HAL_UART_Receive()
 
      *** Interrupt mode IO operation ***
-     
+     ===================================
      [..]
        (+) Send an amount of data in non blocking mode using HAL_UART_Transmit_IT()
        (+) At transmission end of transfer HAL_UART_TxCpltCallback is executed and user can
@@ -166,7 +166,7 @@
             add his own code by customization of function pointer HAL_UART_ErrorCallback
 
      *** DMA mode IO operation ***
-     ==
+     ==============================
      [..]
        (+) Send an amount of data in non blocking mode (DMA) using HAL_UART_Transmit_DMA()
        (+) At transmission end of half transfer HAL_UART_TxHalfCpltCallback is executed and user can
@@ -219,7 +219,7 @@
 
 
      *** UART HAL driver macros list ***
-     ===
+     =============================================
      [..]
        Below the list of most used macros in UART HAL driver.
 
@@ -317,9 +317,9 @@ static void UART_SetConfig(UART_HandleTypeDef *huart);
   *  @brief    Initialization and Configuration functions
   *
 @verbatim
- ==
+ ===============================================================================
             ##### Initialization and Configuration functions #####
- ==
+ ===============================================================================
     [..]
     This subsection provides a set of functions allowing to initialize the USARTx or the UARTy
     in asynchronous mode.
@@ -1047,9 +1047,9 @@ HAL_StatusTypeDef HAL_UART_UnRegisterRxEventCallback(UART_HandleTypeDef *huart)
   *  @brief UART Transmit and Receive functions
   *
 @verbatim
- ==
+ ===============================================================================
                       ##### IO operation functions #####
- ==
+ ===============================================================================
     This subsection provides a set of functions allowing to manage the UART asynchronous
     and Half duplex data transfers.
 
@@ -2729,9 +2729,9 @@ __weak void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
   *  @brief   UART control functions
   *
 @verbatim
-  =
+  ==============================================================================
                       ##### Peripheral Control functions #####
-  =
+  ==============================================================================
   [..]
     This subsection provides a set of functions allowing to control the UART:
     (+) HAL_LIN_SendBreak() API can be helpful to transmit the break character.
@@ -2905,9 +2905,9 @@ HAL_StatusTypeDef HAL_HalfDuplex_EnableReceiver(UART_HandleTypeDef *huart)
   *  @brief   UART State and Errors functions
   *
 @verbatim
-  =
+  ==============================================================================
                  ##### Peripheral State and Errors functions #####
-  =
+  ==============================================================================
  [..]
    This subsection provides a set of functions allowing to return the State of
    UART communication process, return Peripheral Errors occurred during communication

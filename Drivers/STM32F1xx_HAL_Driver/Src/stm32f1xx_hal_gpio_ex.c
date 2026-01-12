@@ -1,4 +1,3 @@
-
 /**
   ******************************************************************************
   * @file    stm32f1xx_hal_gpio_ex.c
@@ -20,14 +19,14 @@
   *
   ******************************************************************************
   @verbatim
-  =
+  ==============================================================================
                     ##### GPIO Peripheral extension features #####
-  =
+  ==============================================================================
   [..] GPIO module on STM32F1 family, manage also the AFIO register:
        (+) Possibility to use the EVENTOUT Cortex feature
 
                      ##### How to use this driver #####
-  =
+  ==============================================================================
   [..] This driver provides functions to use EVENTOUT Cortex feature
     (#) Configure EVENTOUT Cortex feature using the function HAL_GPIOEx_ConfigEventout()
     (#) Activate EVENTOUT Cortex feature using the HAL_GPIOEx_EnableEventout()
@@ -59,9 +58,9 @@
  *  @brief    Extended features functions
  *
 @verbatim
-  =
+  ==============================================================================
                  ##### Extended features functions #####
-  =
+  ==============================================================================
     [..]  This section provides functions allowing to:
     (+) Configure EVENTOUT Cortex feature using the function HAL_GPIOEx_ConfigEventout()
     (+) Activate EVENTOUT Cortex feature using the HAL_GPIOEx_EnableEventout()
@@ -124,3 +123,4 @@ void HAL_GPIOEx_DisableEventout(void)
 /**
   * @}
   */
+

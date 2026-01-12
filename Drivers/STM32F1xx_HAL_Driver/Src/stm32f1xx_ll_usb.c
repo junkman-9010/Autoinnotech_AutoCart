@@ -23,9 +23,9 @@
   *
   ******************************************************************************
   @verbatim
-  =
+  ==============================================================================
                     ##### How to use this driver #####
-  =
+  ==============================================================================
     [..]
       (#) Fill parameters of Init structure in USB_CfgTypeDef structure.
 
@@ -65,9 +65,9 @@ static HAL_StatusTypeDef USB_CoreReset(USB_OTG_GlobalTypeDef *USBx);
   *  @brief    Initialization and Configuration functions
   *
 @verbatim
- ==
+ ===============================================================================
                       ##### Initialization/de-initialization functions #####
- ==
+ ===============================================================================
 
 @endverbatim
   * @{

@@ -9,13 +9,13 @@
   *           + Peripheral Control functions 
   *
   @verbatim  
-  =
+  ==============================================================================
                         ##### How to use this driver #####
-  =
+  ==============================================================================
 
     [..]  
     *** How to configure Interrupts using CORTEX HAL driver ***
-    ===
+    ===========================================================
     [..]     
     This section provides functions allowing to configure the NVIC interrupts (IRQ).
     The Cortex-M3 exceptions are managed by CMSIS functions.
@@ -36,7 +36,7 @@
  
     [..]  
     *** How to configure Systick using CORTEX HAL driver ***
-    
+    ========================================================
     [..]
     Setup SysTick Timer for time base.
            
@@ -108,9 +108,9 @@
   *  @brief    Initialization and Configuration functions 
   *
 @verbatim    
-  =
+  ==============================================================================
               ##### Initialization and de-initialization functions #####
-  =
+  ==============================================================================
     [..]
       This section provides the CORTEX HAL driver functions allowing to configure Interrupts
       Systick functionalities 
@@ -237,9 +237,9 @@ uint32_t HAL_SYSTICK_Config(uint32_t TicksNumb)
   *  @brief   Cortex control functions 
   *
 @verbatim   
-  =
+  ==============================================================================
                       ##### Peripheral Control functions #####
-  =
+  ==============================================================================
     [..]
       This subsection provides a set of functions allowing to control the CORTEX
       (NVIC, SYSTICK, MPU) functionalities. 

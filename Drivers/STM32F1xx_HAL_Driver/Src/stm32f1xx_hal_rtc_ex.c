@@ -58,9 +58,9 @@
   * @brief    RTC Tamper functions
   *
 @verbatim
- ==
+ ===============================================================================
                  ##### RTC Tamper functions #####
- ==
+ ===============================================================================
 
  [..] This section provides functions allowing to configure Tamper feature
 
@@ -299,9 +299,9 @@ HAL_StatusTypeDef HAL_RTCEx_PollForTamper1Event(RTC_HandleTypeDef *hrtc, uint32_
   * @brief    RTC Second functions
   *
 @verbatim
- ==
+ ===============================================================================
                  ##### RTC Second functions #####
- ==
+ ===============================================================================
 
  [..] This section provides functions implementing second interrupt handlers
 
@@ -447,9 +447,9 @@ __weak void HAL_RTCEx_RTCEventErrorCallback(RTC_HandleTypeDef *hrtc)
   * @brief    Extended Peripheral Control functions
   *
 @verbatim
- ==
+ ===============================================================================
               ##### Extension Peripheral Control functions #####
- ==
+ ===============================================================================
     [..]
     This subsection provides functions allowing to
       (+) Writes a data in a specified RTC Backup data register

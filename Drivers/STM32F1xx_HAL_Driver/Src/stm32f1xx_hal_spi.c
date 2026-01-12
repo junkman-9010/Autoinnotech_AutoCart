@@ -21,9 +21,9 @@
   *
   ******************************************************************************
   @verbatim
-  =
+  ==============================================================================
                         ##### How to use this driver #####
-  =
+  ==============================================================================
     [..]
       The SPI HAL driver can be used as follows:
 
@@ -144,19 +144,19 @@
        |         |                | 2Lines Fullduplex   |     2Lines RxOnly    |         1Line        |
        | Process | Transfer mode  |---------------------|----------------------|----------------------|
        |         |                |  Master  |  Slave   |  Master   |  Slave   |  Master   |  Slave   |
-       |===|
+       |==============================================================================================|
        |    T    |     Polling    | Fpclk/2  | Fpclk/2  |    NA     |    NA    |    NA     |   NA     |
        |    X    |----------------|----------|----------|-----------|----------|-----------|----------|
        |    /    |     Interrupt  | Fpclk/4  | Fpclk/8  |    NA     |    NA    |    NA     |   NA     |
        |    R    |----------------|----------|----------|-----------|----------|-----------|----------|
        |    X    |       DMA      | Fpclk/2  | Fpclk/2  |    NA     |    NA    |    NA     |   NA     |
-       |==|==|===|===|====|===|====|===|
+       |=========|================|==========|==========|===========|==========|===========|==========|
        |         |     Polling    | Fpclk/2  | Fpclk/2  | Fpclk/64  | Fpclk/2  | Fpclk/64  | Fpclk/2  |
        |         |----------------|----------|----------|-----------|----------|-----------|----------|
        |    R    |     Interrupt  | Fpclk/8  | Fpclk/8  | Fpclk/64  | Fpclk/2  | Fpclk/64  | Fpclk/2  |
        |    X    |----------------|----------|----------|-----------|----------|-----------|----------|
        |         |       DMA      | Fpclk/2  | Fpclk/2  | Fpclk/64  | Fpclk/2  | Fpclk/128 | Fpclk/2  |
-       |==|==|===|===|====|===|====|===|
+       |=========|================|==========|==========|===========|==========|===========|==========|
        |         |     Polling    | Fpclk/2  | Fpclk/4  |     NA    |    NA    | Fpclk/2   | Fpclk/64 |
        |         |----------------|----------|----------|-----------|----------|-----------|----------|
        |    T    |     Interrupt  | Fpclk/2  | Fpclk/4  |     NA    |    NA    | Fpclk/2   | Fpclk/64 |
@@ -169,19 +169,19 @@
        |         |                | 2Lines Fullduplex   |     2Lines RxOnly    |         1Line        |
        | Process | Transfer mode  |---------------------|----------------------|----------------------|
        |         |                |  Master  |  Slave   |  Master   |  Slave   |  Master   |  Slave   |
-       |===|
+       |==============================================================================================|
        |    T    |     Polling    | Fpclk/2  | Fpclk/2  |    NA     |    NA    |    NA     |   NA     |
        |    X    |----------------|----------|----------|-----------|----------|-----------|----------|
        |    /    |     Interrupt  | Fpclk/4  | Fpclk/4  |    NA     |    NA    |    NA     |   NA     |
        |    R    |----------------|----------|----------|-----------|----------|-----------|----------|
        |    X    |       DMA      | Fpclk/2  | Fpclk/2  |    NA     |    NA    |    NA     |   NA     |
-       |==|==|===|===|====|===|====|===|
+       |=========|================|==========|==========|===========|==========|===========|==========|
        |         |     Polling    | Fpclk/2  | Fpclk/2  | Fpclk/64  | Fpclk/2  | Fpclk/32  | Fpclk/2  |
        |         |----------------|----------|----------|-----------|----------|-----------|----------|
        |    R    |     Interrupt  | Fpclk/4  | Fpclk/4  | Fpclk/64  | Fpclk/2  | Fpclk/64  | Fpclk/2  |
        |    X    |----------------|----------|----------|-----------|----------|-----------|----------|
        |         |       DMA      | Fpclk/2  | Fpclk/2  | Fpclk/64  | Fpclk/2  | Fpclk/128 | Fpclk/2  |
-       |==|==|===|===|====|===|====|===|
+       |=========|================|==========|==========|===========|==========|===========|==========|
        |         |     Polling    | Fpclk/2  | Fpclk/2  |     NA    |    NA    | Fpclk/2   | Fpclk/32 |
        |         |----------------|----------|----------|-----------|----------|-----------|----------|
        |    T    |     Interrupt  | Fpclk/2  | Fpclk/2  |     NA    |    NA    | Fpclk/2   | Fpclk/64 |
@@ -296,9 +296,9 @@ static HAL_StatusTypeDef SPI_EndRxTxTransaction(SPI_HandleTypeDef *hspi, uint32_
   *  @brief    Initialization and Configuration functions
   *
 @verbatim
- ==
+ ===============================================================================
               ##### Initialization and de-initialization functions #####
- ==
+ ===============================================================================
     [..]  This subsection provides a set of functions allowing to initialize and
           de-initialize the SPIx peripheral:
 
@@ -754,9 +754,9 @@ HAL_StatusTypeDef HAL_SPI_UnRegisterCallback(SPI_HandleTypeDef *hspi, HAL_SPI_Ca
   *  @brief   Data transfers functions
   *
 @verbatim
-  =
+  ==============================================================================
                       ##### IO operation functions #####
- ==
+ ===============================================================================
  [..]
     This subsection provides a set of functions allowing to manage the SPI
     data transfers.
@@ -2671,9 +2671,9 @@ __weak void HAL_SPI_AbortCpltCallback(SPI_HandleTypeDef *hspi)
   * @brief   SPI control functions
   *
 @verbatim
- ==
+ ===============================================================================
                       ##### Peripheral State and Errors functions #####
- ==
+ ===============================================================================
     [..]
     This subsection provides a set of functions allowing to control the SPI.
      (+) HAL_SPI_GetState() API can be helpful to check in run-time the state of the SPI peripheral

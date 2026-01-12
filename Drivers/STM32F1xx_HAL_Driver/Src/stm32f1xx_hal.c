@@ -17,9 +17,9 @@
   *
   ******************************************************************************
   @verbatim
-  =
+  ==============================================================================
                      ##### How to use this driver #####
-  =
+  ==============================================================================
     [..]
     The common HAL driver contains a set of generic and common APIs that can be
     used by the PPP peripheral drivers and the user to start using the HAL.
@@ -93,9 +93,9 @@ HAL_TickFreqTypeDef uwTickFreq = HAL_TICK_FREQ_DEFAULT;  /* 1KHz */
  *  @brief    Initialization and de-initialization functions
  *
 @verbatim
- ==
+ ===============================================================================
               ##### Initialization and de-initialization functions #####
- ==
+ ===============================================================================
    [..]  This section provides functions allowing to:
       (+) Initializes the Flash interface, the NVIC allocation and initial clock
           configuration. It initializes the systick also when timeout is needed
@@ -262,9 +262,9 @@ __weak HAL_StatusTypeDef HAL_InitTick(uint32_t TickPriority)
   *  @brief    HAL Control functions
   *
 @verbatim
- ==
+ ===============================================================================
                       ##### HAL Control functions #####
- ==
+ ===============================================================================
     [..]  This section provides functions allowing to:
       (+) Provide a tick value in millisecond
       (+) Provide a blocking delay in millisecond

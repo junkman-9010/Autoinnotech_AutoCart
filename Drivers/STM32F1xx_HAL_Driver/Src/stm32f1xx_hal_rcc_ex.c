@@ -62,9 +62,9 @@
   *  @brief  Extended Peripheral Control functions
   *
 @verbatim
- ==
+ ===============================================================================
                 ##### Extended Peripheral Control functions  #####
- ==
+ ===============================================================================
     [..]
     This subsection provides a set of functions allowing to control the RCC Clocks
     frequencies.
@@ -591,9 +591,9 @@ uint32_t HAL_RCCEx_GetPeriphCLKFreq(uint32_t PeriphClk)
   *  @brief  PLLI2S Management functions
   *
 @verbatim
- ==
+ ===============================================================================
                 ##### Extended PLLI2S Management functions  #####
- ==
+ ===============================================================================
     [..]
     This subsection provides a set of functions allowing to control the PLLI2S
     activation or deactivation
@@ -717,9 +717,9 @@ HAL_StatusTypeDef HAL_RCCEx_DisablePLLI2S(void)
   *  @brief  PLL2 Management functions
   *
 @verbatim
- ==
+ ===============================================================================
                 ##### Extended PLL2 Management functions  #####
- ==
+ ===============================================================================
     [..]
     This subsection provides a set of functions allowing to control the PLL2
     activation or deactivation

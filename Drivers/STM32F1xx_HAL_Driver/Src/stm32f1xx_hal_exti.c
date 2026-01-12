@@ -20,9 +20,9 @@
   *
   ******************************************************************************
   @verbatim
-  =
+  ==============================================================================
                     ##### EXTI Peripheral features #####
-  =
+  ==============================================================================
   [..]
     (+) Each Exti line can be configured within this driver.
 
@@ -46,7 +46,7 @@
         be selected through multiplexer.
 
                      ##### How to use this driver #####
-  =
+  ==============================================================================
   [..]
 
     (#) Configure the EXTI line using HAL_EXTI_SetConfigLine().
@@ -125,9 +125,9 @@
   *  @brief    Configuration functions
   *
 @verbatim
- ==
+ ===============================================================================
               ##### Configuration functions #####
- ==
+ ===============================================================================
 
 @endverbatim
   * @{
@@ -418,9 +418,9 @@ HAL_StatusTypeDef HAL_EXTI_GetHandle(EXTI_HandleTypeDef *hexti, uint32_t ExtiLin
   *  @brief EXTI IO functions.
   *
 @verbatim
- ==
+ ===============================================================================
                        ##### IO operation functions #####
- ==
+ ===============================================================================
 
 @endverbatim
   * @{

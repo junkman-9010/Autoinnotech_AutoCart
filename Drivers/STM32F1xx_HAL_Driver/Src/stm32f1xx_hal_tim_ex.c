@@ -22,9 +22,9 @@
   *
   ******************************************************************************
   @verbatim
-  =
+  ==============================================================================
                       ##### TIMER Extended features #####
-  =
+  ==============================================================================
   [..]
     The Timer Extended features include:
     (#) Complementary outputs with programmable dead-time for :
@@ -38,7 +38,7 @@
         positioning purposes
 
             ##### How to use this driver #####
-  =
+  ==============================================================================
     [..]
      (#) Initialize the TIM low level resources by implementing the following functions
          depending on the selected feature:
@@ -109,9 +109,9 @@ static void TIM_CCxNChannelCmd(TIM_TypeDef *TIMx, uint32_t Channel, uint32_t Cha
   * @brief    Timer Hall Sensor functions
   *
 @verbatim
-  =
+  ==============================================================================
                       ##### Timer Hall Sensor functions #####
-  =
+  ==============================================================================
   [..]
     This section provides functions allowing to:
     (+) Initialize and configure TIM HAL Sensor.
@@ -595,9 +595,9 @@ HAL_StatusTypeDef HAL_TIMEx_HallSensor_Stop_DMA(TIM_HandleTypeDef *htim)
   *  @brief   Timer Complementary Output Compare functions
   *
 @verbatim
-  =
+  ==============================================================================
               ##### Timer Complementary Output Compare functions #####
-  =
+  ==============================================================================
   [..]
     This section provides functions allowing to:
     (+) Start the Complementary Output Compare/PWM.
@@ -1070,9 +1070,9 @@ HAL_StatusTypeDef HAL_TIMEx_OCN_Stop_DMA(TIM_HandleTypeDef *htim, uint32_t Chann
   * @brief    Timer Complementary PWM functions
   *
 @verbatim
-  =
+  ==============================================================================
                  ##### Timer Complementary PWM functions #####
-  =
+  ==============================================================================
   [..]
     This section provides functions allowing to:
     (+) Start the Complementary PWM.
@@ -1541,9 +1541,9 @@ HAL_StatusTypeDef HAL_TIMEx_PWMN_Stop_DMA(TIM_HandleTypeDef *htim, uint32_t Chan
   * @brief    Timer Complementary One Pulse functions
   *
 @verbatim
-  =
+  ==============================================================================
                 ##### Timer Complementary One Pulse functions #####
-  =
+  ==============================================================================
   [..]
     This section provides functions allowing to:
     (+) Start the Complementary One Pulse generation.
@@ -1751,9 +1751,9 @@ HAL_StatusTypeDef HAL_TIMEx_OnePulseN_Stop_IT(TIM_HandleTypeDef *htim, uint32_t 
   * @brief    Peripheral Control functions
   *
 @verbatim
-  =
+  ==============================================================================
                     ##### Peripheral Control functions #####
-  =
+  ==============================================================================
   [..]
     This section provides functions allowing to:
       (+) Configure the commutation event in case of use of the Hall sensor interface.
@@ -2076,9 +2076,9 @@ HAL_StatusTypeDef HAL_TIMEx_RemapConfig(TIM_HandleTypeDef *htim, uint32_t Remap)
   * @brief    Extended Callbacks functions
   *
 @verbatim
-  =
+  ==============================================================================
                     ##### Extended Callbacks functions #####
-  =
+  ==============================================================================
   [..]
     This section provides Extended TIM callback functions:
     (+) Timer Commutation callback
@@ -2139,9 +2139,9 @@ __weak void HAL_TIMEx_BreakCallback(TIM_HandleTypeDef *htim)
   * @brief    Extended Peripheral State functions
   *
 @verbatim
-  =
+  ==============================================================================
                 ##### Extended Peripheral State functions #####
-  =
+  ==============================================================================
   [..]
     This subsection permits to get in run-time the status of the peripheral
     and the data flow.

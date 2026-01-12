@@ -19,12 +19,12 @@
   *
   ******************************************************************************
   @verbatim
-  =
+  ==============================================================================
                       ##### How to use this driver #####
-  =
+  ==============================================================================
     [..]
      *** Signal generation operation ***
-     
+     ===================================
      [..]
       (+) Use HAL_DACEx_TriangleWaveGenerate() to generate Triangle signal.
       (+) Use HAL_DACEx_NoiseWaveGenerate() to generate Noise signal.
@@ -66,9 +66,9 @@
   *  @brief    Extended IO operation functions
   *
 @verbatim
-  =
+  ==============================================================================
                  ##### Extended features functions #####
-  =
+  ==============================================================================
     [..]  This section provides functions allowing to:
       (+) Start conversion.
       (+) Stop conversion.
@@ -395,9 +395,9 @@ __weak void HAL_DACEx_DMAUnderrunCallbackCh2(DAC_HandleTypeDef *hdac)
   *  @brief    Extended Peripheral Control functions
   *
 @verbatim
-  =
+  ==============================================================================
              ##### Peripheral Control functions #####
-  =
+  ==============================================================================
     [..]  This section provides functions allowing to:
       (+) Set the specified data holding register value for DAC channel.
 

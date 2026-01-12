@@ -41,9 +41,9 @@
   *
   ******************************************************************************
   @verbatim
-  =
+  ==============================================================================
                       ##### TIMER Generic features #####
-  =
+  ==============================================================================
   [..] The Timer features include:
        (#) 16-bit up, down, up/down auto-reload counter.
        (#) 16-bit programmable prescaler allowing dividing (also on the fly) the
@@ -58,7 +58,7 @@
        (#) Supports incremental encoder for positioning purposes
 
             ##### How to use this driver #####
-  =
+  ==============================================================================
     [..]
      (#) Initialize the TIM low level resources by implementing the following functions
          depending on the selected feature:
@@ -107,7 +107,7 @@
          HAL_TIM_DMABurst_ReadStart()
 
     *** Callback registration ***
-  ===
+  =============================================
 
   [..]
   The compilation define  USE_HAL_TIM_REGISTER_CALLBACKS when set to 1
@@ -236,9 +236,9 @@ static HAL_StatusTypeDef TIM_SlaveTimer_SetConfig(TIM_HandleTypeDef *htim,
   *  @brief    Time Base functions
   *
 @verbatim
-  =
+  ==============================================================================
               ##### Time Base functions #####
-  =
+  ==============================================================================
   [..]
     This section provides functions allowing to:
     (+) Initialize and configure the TIM base.
@@ -620,9 +620,9 @@ HAL_StatusTypeDef HAL_TIM_Base_Stop_DMA(TIM_HandleTypeDef *htim)
   *  @brief    TIM Output Compare functions
   *
 @verbatim
-  =
+  ==============================================================================
                   ##### TIM Output Compare functions #####
-  =
+  ==============================================================================
   [..]
     This section provides functions allowing to:
     (+) Initialize and configure the TIM Output Compare.
@@ -1285,9 +1285,9 @@ HAL_StatusTypeDef HAL_TIM_OC_Stop_DMA(TIM_HandleTypeDef *htim, uint32_t Channel)
   *  @brief    TIM PWM functions
   *
 @verbatim
-  =
+  ==============================================================================
                           ##### TIM PWM functions #####
-  =
+  ==============================================================================
   [..]
     This section provides functions allowing to:
     (+) Initialize and configure the TIM PWM.
@@ -1949,9 +1949,9 @@ HAL_StatusTypeDef HAL_TIM_PWM_Stop_DMA(TIM_HandleTypeDef *htim, uint32_t Channel
   *  @brief    TIM Input Capture functions
   *
 @verbatim
-  =
+  ==============================================================================
               ##### TIM Input Capture functions #####
-  =
+  ==============================================================================
  [..]
    This section provides functions allowing to:
    (+) Initialize and configure the TIM Input Capture.
@@ -2591,9 +2591,9 @@ HAL_StatusTypeDef HAL_TIM_IC_Stop_DMA(TIM_HandleTypeDef *htim, uint32_t Channel)
   *  @brief    TIM One Pulse functions
   *
 @verbatim
-  =
+  ==============================================================================
                         ##### TIM One Pulse functions #####
-  =
+  ==============================================================================
   [..]
     This section provides functions allowing to:
     (+) Initialize and configure the TIM One Pulse.
@@ -2983,9 +2983,9 @@ HAL_StatusTypeDef HAL_TIM_OnePulse_Stop_IT(TIM_HandleTypeDef *htim, uint32_t Out
   *  @brief    TIM Encoder functions
   *
 @verbatim
-  =
+  ==============================================================================
                           ##### TIM Encoder functions #####
-  =
+  ==============================================================================
   [..]
     This section provides functions allowing to:
     (+) Initialize and configure the TIM Encoder.
@@ -3805,9 +3805,9 @@ HAL_StatusTypeDef HAL_TIM_Encoder_Stop_DMA(TIM_HandleTypeDef *htim, uint32_t Cha
   *  @brief    TIM IRQ handler management
   *
 @verbatim
-  =
+  ==============================================================================
                         ##### IRQ handler management #####
-  =
+  ==============================================================================
   [..]
     This section provides Timer IRQ handler function.
 
@@ -4009,9 +4009,9 @@ void HAL_TIM_IRQHandler(TIM_HandleTypeDef *htim)
   *  @brief    TIM Peripheral Control functions
   *
 @verbatim
-  =
+  ==============================================================================
                    ##### Peripheral Control functions #####
-  =
+  ==============================================================================
  [..]
    This section provides functions allowing to:
       (+) Configure The Input Output channels for OC, PWM, IC or One Pulse mode.
@@ -5633,9 +5633,9 @@ uint32_t HAL_TIM_ReadCapturedValue(const TIM_HandleTypeDef *htim, uint32_t Chann
   *  @brief    TIM Callbacks functions
   *
 @verbatim
-  =
+  ==============================================================================
                         ##### TIM Callbacks functions #####
-  =
+  ==============================================================================
  [..]
    This section provides TIM callback functions:
    (+) TIM Period elapsed callback
@@ -6319,9 +6319,9 @@ HAL_StatusTypeDef HAL_TIM_UnRegisterCallback(TIM_HandleTypeDef *htim, HAL_TIM_Ca
   *  @brief   TIM Peripheral State functions
   *
 @verbatim
-  =
+  ==============================================================================
                         ##### Peripheral State functions #####
-  =
+  ==============================================================================
     [..]
     This subsection permits to get in run-time the status of the peripheral
     and the data flow.

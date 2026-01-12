@@ -50,9 +50,9 @@
   * @brief    PCDEx control functions
   *
 @verbatim
- ==
+ ===============================================================================
                  ##### Extended features functions #####
- ==
+ ===============================================================================
     [..]  This section provides functions allowing to:
       (+) Update FIFO configuration
 

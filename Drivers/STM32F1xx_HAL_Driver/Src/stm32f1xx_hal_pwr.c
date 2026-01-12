@@ -132,9 +132,9 @@ static void PWR_OverloadWfe(void)
   *  @brief   Initialization and de-initialization functions
   *
 @verbatim
- ==
+ ===============================================================================
               ##### Initialization and de-initialization functions #####
- ==
+ ===============================================================================
     [..]
       After reset, the backup domain (RTC registers, RTC backup data
       registers) is protected against possible unwanted
@@ -192,12 +192,12 @@ void HAL_PWR_DisableBkUpAccess(void)
   * @brief    Low Power modes configuration functions
   *
 @verbatim
- ==
+ ===============================================================================
                  ##### Peripheral Control functions #####
- ==
+ ===============================================================================
      
     *** PVD configuration ***
-    ====
+    =========================
     [..]
       (+) The PVD is used to monitor the VDD power supply by comparing it to a
           threshold selected by the PVD Level (PLS[2:0] bits in the PWR_CR).
@@ -209,7 +209,7 @@ void HAL_PWR_DisableBkUpAccess(void)
       (+) The PVD is stopped in Standby mode.
 
     *** WakeUp pin configuration ***
-    ====
+    ================================
     [..]
       (+) WakeUp pin is used to wake up the system from Standby mode. This pin is
           forced in input pull-down configuration and is active on rising edges.
@@ -219,7 +219,7 @@ void HAL_PWR_DisableBkUpAccess(void)
     [..]
 
     *** Low Power modes configuration ***
-    ==
+    =====================================
      [..]
       The device features 3 low-power modes:
       (+) Sleep mode: CPU clock off, all peripherals including Cortex-M3 core peripherals like 
@@ -229,7 +229,7 @@ void HAL_PWR_DisableBkUpAccess(void)
   
   
    *** Sleep mode ***
-   ====
+   ==================
     [..]
       (+) Entry:
           The Sleep mode is entered by using the HAL_PWR_EnterSLEEPMode(PWR_MAINREGULATOR_ON, PWR_SLEEPENTRY_WFx)
@@ -245,7 +245,7 @@ void HAL_PWR_DisableBkUpAccess(void)
            (+++) Any EXTI Line (Internal or External) configured in Event mode
 
    *** Stop mode ***
-   ===
+   =================
     [..]
       The Stop mode is based on the Cortex-M3 deepsleep mode combined with peripheral
       clock gating. The voltage regulator can be configured either in normal or low-power mode.
@@ -265,7 +265,7 @@ void HAL_PWR_DisableBkUpAccess(void)
           (++) WFE entry mode, Any EXTI Line (Internal or External) configured in Event mode.
 
    *** Standby mode ***
-   ======
+   ====================
      [..]
       The Standby mode allows to achieve the lowest power consumption. It is based on the
       Cortex-M3 deepsleep mode, with the voltage regulator disabled. The 1.8 V domain is 
@@ -280,7 +280,7 @@ void HAL_PWR_DisableBkUpAccess(void)
              NRSTpin, IWDG Reset
 
    *** Auto-wakeup (AWU) from low-power mode ***
-       ===
+       =============================================
        [..]
         
        (+) The MCU can be woken up from low-power mode by an RTC Alarm event, 
@@ -292,7 +292,7 @@ void HAL_PWR_DisableBkUpAccess(void)
                 configure the RTC to generate the RTC alarm using the HAL_RTC_SetAlarm_IT() function.
 
    *** PWR Workarounds linked to Silicon Limitation ***
-       ===
+       ====================================================
        [..]
        Below the list of all silicon limitations known on STM32F1xx prouct.
 

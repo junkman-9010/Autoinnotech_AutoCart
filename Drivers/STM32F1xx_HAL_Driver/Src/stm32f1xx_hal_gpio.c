@@ -1,4 +1,3 @@
-
 /**
   ******************************************************************************
   * @file    stm32f1xx_hal_gpio.c
@@ -21,9 +20,9 @@
   *
   ******************************************************************************
   @verbatim
-  =
+  ==============================================================================
                     ##### GPIO Peripheral features #####
-  =
+  ==============================================================================
   [..]
   Subject to the specific hardware characteristics of each I/O port listed in the datasheet, each
   port bit of the General Purpose IO (GPIO) Ports, can be individually configured by software
@@ -59,7 +58,7 @@
   independently. A pending register maintains the status line of the interrupt requests
 
                      ##### How to use this driver #####
-  =
+  ==============================================================================
  [..]
    (#) Enable the GPIO APB2 clock using the following function : __HAL_RCC_GPIOx_CLK_ENABLE().
 
@@ -157,9 +156,9 @@
  *  @brief    Initialization and Configuration functions
  *
 @verbatim
- ==
+ ===============================================================================
               ##### Initialization and de-initialization functions #####
- ==
+ ===============================================================================
   [..]
     This section provides functions allowing to initialize and de-initialize the GPIOs
     to be ready for use.
@@ -412,9 +411,9 @@ void HAL_GPIO_DeInit(GPIO_TypeDef  *GPIOx, uint32_t GPIO_Pin)
  *  @brief   GPIO Read and Write
  *
 @verbatim
- ==
+ ===============================================================================
                        ##### IO operation functions #####
- ==
+ ===============================================================================
   [..]
     This subsection provides a set of functions allowing to manage the GPIOs.
 
@@ -584,3 +583,4 @@ __weak void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 /**
   * @}
   */
+

@@ -1,8 +1,7 @@
-../Core/Src/hw_tim.c:23:6:HW_TIM1_Init	80	static
-../Core/Src/hw_tim.c:77:6:HW_TIM2_Init	32	static
-../Core/Src/hw_tim.c:119:6:HW_TIM4_Init	64	static
-../Core/Src/hw_tim.c:172:6:HW_TIM8_Init	96	static
-../Core/Src/hw_tim.c:239:19:HW_TIM_PWM_Start	16	static
-../Core/Src/hw_tim.c:246:6:HW_TIM_SetPWM_Duty	24	static
-../Core/Src/hw_tim.c:254:19:HW_TIM_IC_Start	16	static
-../Core/Src/hw_tim.c:261:6:HAL_TIM_PeriodElapsedCallback	16	static
+../Core/Src/hw_tim.c:22:6:HW_TIM1_Init	80	static
+../Core/Src/hw_tim.c:68:6:HW_TIM2_Init	32	static
+../Core/Src/hw_tim.c:96:6:HW_TIM4_Init	48	static
+../Core/Src/hw_tim.c:129:6:HW_TIM8_Init	72	static
+../Core/Src/hw_tim.c:174:19:HW_TIM_PWM_Start	16	static
+../Core/Src/hw_tim.c:178:6:HW_TIM_SetPWM_Duty	24	static
+../Core/Src/hw_tim.c:182:6:HAL_TIM_PeriodElapsedCallback	16	static

@@ -1,4 +1,3 @@
-
 /* USER CODE BEGIN Header */
 /**
  ******************************************************************************
@@ -145,28 +144,31 @@ int main(void) {
 	// 범용 초기화 함수 사용: huart3와 main.h에 정의된 DE3 핀을 연결
 	HW_RS485_Init_Config(&rs485_ch3, &huart3, DE3_GPIO_Port, DE3_Pin);
 
-//	// 센서 1 초기화: XSHUT=PA0, 주소=0x54로 설정
-//	TOF_Init(&tof_left, &hi2c2, GPIOA, GPIO_PIN_0, 0x54);
-//	// 센서 2 초기화: XSHUT=PA1, 주소=0x56으로 설정
-//	TOF_Init(&tof_right, &hi2c2, GPIOA, GPIO_PIN_1, 0x56);
+	HAL_GPIO_WritePin(M1_DIR_GPIO_Port, M1_DIR_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(M2_DIR_GPIO_Port, M2_DIR_Pin, GPIO_PIN_RESET);
 
-	// *** 이 코드가 없으면 Distance 값이 0에서 변하지 않습니다 ***
-//	TOF_StartRanging(&tof_left);
-//	TOF_StartRanging(&tof_right);
+	HAL_GPIO_WritePin(M1_SLEEP_GPIO_Port, M1_SLEEP_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(M2_SLEEP_GPIO_Port, M2_SLEEP_Pin, GPIO_PIN_RESET);
 
-	HAL_GPIO_WritePin(TOF_SHUT1_GPIO_Port, TOF_SHUT1_Pin, GPIO_PIN_SET);
-	HAL_GPIO_WritePin(TOF_SHUT2_GPIO_Port, TOF_SHUT2_Pin, GPIO_PIN_SET);
-	HAL_Delay(1000);
+	HAL_GPIO_WritePin(M1_DRVOFF_GPIO_Port, M1_DRVOFF_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(M2_DRVOFF_GPIO_Port, M2_DRVOFF_Pin, GPIO_PIN_RESET);
 
-	// 2. 직접 Ranging Start 명령 전송 (0x29 주소의 0x0087 레지스터에 0x40 쓰기)
-	uint8_t start_cmd = 0x40;
-	if (HW_I2C_WriteReg16(&hi2c2, 0x29, 0x0087, &start_cmd, 1) == HAL_OK) {
-		char *msg = "Direct Start OK (0x29)\r\n";
-		HW_RS485_Transmit(&rs485_ch3, (uint8_t*) msg, strlen(msg), 100);
-	} else {
-		char *msg = "Direct Start Fail!\r\n";
-		HW_RS485_Transmit(&rs485_ch3, (uint8_t*) msg, strlen(msg), 100);
-	}
+	HAL_GPIO_WritePin(M1_DIR_GPIO_Port, M1_DIR_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(M2_DIR_GPIO_Port, M2_DIR_Pin, GPIO_PIN_RESET);
+
+	HAL_Delay(500);
+
+	HAL_GPIO_WritePin(M1_SLEEP_GPIO_Port, M1_SLEEP_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(M2_SLEEP_GPIO_Port, M2_SLEEP_Pin, GPIO_PIN_SET);
+
+	HAL_Delay(100);
+
+	// [STEP 2] PWM 시작
+	HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_2); // PD13
+	HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_2); // PC7
+
+	// TIM8은 고급 타이머이므로 출력을 물리적으로 허용해줘야 합니다.
+	__HAL_TIM_MOE_ENABLE(&htim8);
 
 	// TIM2 인터럽트 시작 (이 코드가 있어야 콜백이 실행됩니다)
 	HAL_TIM_Base_Start_IT(&htim2);
@@ -223,28 +225,13 @@ int main(void) {
 //			TOF_ReadDistance(&tof_left);
 //			TOF_ReadDistance(&tof_right);
 
-			// 2. 데이터를 문자열로 포맷팅
-			// 예: "L: 0150mm, R: 1200mm\r\n"
-			uint8_t raw_data[2] = { 0, 0 };
+			// 5% Duty 적용 (3600 * 0.05 = 180)
+//			uint32_t duty_5_percent = 180;720
+			uint32_t duty_5_percent = 720;
 
-			// 1. 0x29 주소의 0x0096(Distance) 레지스터에서 2바이트 직접 읽기
-			if (HW_I2C_ReadReg16(&hi2c2, 0x29, 0x0096, raw_data, 2) == HAL_OK) {
-				// 바이트 결합 (MSB << 8 | LSB)
-				direct_distance = (uint16_t) ((raw_data[0] << 8) | raw_data[1]);
 
-				// 2. 다음 측정을 위해 인터럽트 클리어 (0x0086 레지스터에 0x01 쓰기) 필수!
-				uint8_t clear_val = 0x01;
-				HW_I2C_WriteReg16(&hi2c2, 0x29, 0x0086, &clear_val, 1);
-
-				// 3. RS485 출력
-				int len = sprintf(tx_msg, "Direct(0x29) Dist: %d mm\r\n",
-						direct_distance);
-				HW_RS485_Transmit(&rs485_ch3, (uint8_t*) tx_msg, len, 100);
-			} else {
-				// 통신 실패 시
-				char *err = "Direct Read Fail\r\n";
-				HW_RS485_Transmit(&rs485_ch3, (uint8_t*) err, strlen(err), 100);
-			}
+			HW_TIM_SetPWM_Duty(&htim4, TIM_CHANNEL_2, duty_5_percent);
+			HW_TIM_SetPWM_Duty(&htim8, TIM_CHANNEL_2, duty_5_percent);
 
 			// LED1 토글 동작 수행
 			HAL_GPIO_TogglePin(GPIOB, LED1_Pin);
